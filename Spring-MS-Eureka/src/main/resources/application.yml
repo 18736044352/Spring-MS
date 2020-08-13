@@ -1,0 +1,21 @@
+server:
+#  port: 7001 # 服务端口
+  port: 7002 # 服务端口
+
+eureka:
+  instance:
+#    hostname: eureka7001.com # 设置主机名
+    hostname: eureka7002.com # 设置主机名
+
+  client:
+    registerWithEureka: false # 是否向 Eureka 注册服务。该应用为服务注册中心，不需要自注册，设置为 false
+    fetchRegistry: false # 是否检索服务。该应用为服务注册中心，职责为注册和发现服务，无需检索服务，设置为 false
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/
+#      defaultZone: http://eureka7002.com:7002/eureka/
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 注册中心url
+spring:
+  application:
+#    name: eurka-server7001  #服务名称
+    name: eurka-server7002  #服务名称
+
