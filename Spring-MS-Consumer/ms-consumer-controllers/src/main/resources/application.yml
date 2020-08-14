@@ -1,0 +1,22 @@
+
+server:
+  port: 8764
+spring:
+  application:
+    name: ms-consumer
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    region: MS-Register
+    availability-zones:
+      MS-Register: MS-Register01,MS-Register02
+    service-url:
+      MS-Register01: http://eureka7001.com:7001/eureka/
+      MS-Register02: http://eureka7002.com:7002/eureka/
+      ####默认配置
+#    serverUrl:
+#      defaultZone: http://localhost:8761/eureka/ 单机版
