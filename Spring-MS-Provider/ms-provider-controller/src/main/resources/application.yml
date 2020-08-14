@@ -1,0 +1,21 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: MSProvider
+
+eureka:
+  client:
+    ######自定义erueka注册中心，服务注册配置
+    region: MS-Register
+    availability-zones:
+      MS-Register: MS-Register01,MS-Register02
+    service-url:
+      MS-Register01: http://eureka7001.com:7001/eureka/
+      MS-Register02: http://eureka7002.com:7002/eureka/
+
+    #####erueka注册中心默认配置
+#    registerWithEureka: false # 是否向 Eureka 注册服务。该应用为服务注册中心，不需要自注册，设置为 false
+#      fetchRegistry: false # 是否检索服务。该应用为服务注册中心，职责为注册和发现服务，无需检索服务，设置为 false
+#      serviceUrl:
+#        defaultZone: http://localhost:8761/eureka/

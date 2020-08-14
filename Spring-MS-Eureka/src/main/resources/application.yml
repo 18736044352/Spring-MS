@@ -1,3 +1,4 @@
+###模拟注册集群
 server:
 #  port: 7001 # 服务端口
   port: 7002 # 服务端口
@@ -10,6 +11,7 @@ eureka:
   client:
     registerWithEureka: false # 是否向 Eureka 注册服务。该应用为服务注册中心，不需要自注册，设置为 false
     fetchRegistry: false # 是否检索服务。该应用为服务注册中心，职责为注册和发现服务，无需检索服务，设置为 false
+
     serviceUrl:
       defaultZone: http://eureka7001.com:7001/eureka/
 #      defaultZone: http://eureka7002.com:7002/eureka/
@@ -19,3 +21,4 @@ spring:
 #    name: eurka-server7001  #服务名称
     name: eurka-server7002  #服务名称
 
+####单节点默认端口8761
